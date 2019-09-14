@@ -1,0 +1,41 @@
+Name: Makenzie Brian
+Date: January 24, 2016
+
+1.        
+ How many cost units are spent in the entire process of performing 16 consecutive
+ push operations on an empty array which starts out at capacity 8, assuming that
+ the array will double in capacity each time new item is added to an already
+ full dynamic array? Now try it for 32 consecutive push operations. As N (ie. the number of pushes) grows large, under this strategy
+ for resizing, what is the big-oh complexity for push?
+ 
+ 8 to add each to the original array + 9 to copy from the smaller to a larger array and 
+ add one + 7 to add the remaining 7 values = 24 units.
+ For the second, it will be the same 24 as before + 17 to copy from the smaller to a 
+ larger array and add one + 15 to add the remaining 15 values = 56 units.
+ O(n) is the complexity because its an arbitrary large value.
+ 
+2.        
+ How many cost units are spent in the entire process of performing 16 consecutive
+ push operations on an empty array which starts out at capacity 8, assuming that
+ the array will grow by a constant 2 spaces each time new item is added to an
+ already full dynamic array? Now try it for 32 consecutive push operations. As N
+ (ie. the number of pushes) grows large, under this
+ strategy for resizing, what is the big-oh complexity for push?
+ 
+ 8 to fill + 8 to copy + 2 to fill + 10 to copy + 2 to fill + 12 to copy +
+ 2 to fill + 14 to copy + 2 to fill = 60 total
+ For the second,  previos 60 + 16 to copy + 2 to fill + 18 to copy  +2 to fill + 20 to copy +
+ 2 to fill + 22 to copy + 2 to fill + 24 to copy + 2 to fill + 26 to copy + 2 to fill + 28 to copy +
+ 2 to fill + 30 to fill + 2 to fill = 260 total
+ O(n^2) is the complexity because you do (n*n)/2 which simplifies
+ 
+3.        
+ Suppose that a dynamic array stack doubles its capacity when it is full, and shrinks
+ (on Pop only) its capacity by half when the array is half full or less. Can you
+ devise a sequence of N push() and pop() operations
+ which will result in poor performance (O(N^2) total cost)? How might you adjust
+ the arrays shrinking policy to avoid this? (Hint: You may assume that the
+ initial capacity of the array is N/2.)
+ 
+ Alternating push and pop operations n times results in complexity O(n^2). Avoid this 
+ by having pop shrink at less than half or just never.
